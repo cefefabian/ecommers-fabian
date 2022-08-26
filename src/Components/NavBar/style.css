@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+
+
+
+.header{
+  height: 100px;
+  width: 100%;
+  background-color: rgb(204, 204, 204);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-marca{
+  padding-left: 10%;
+}
+.div-marca h1{
+  height: 50px;
+}
+.links{
+  padding-right: 23%;
+}
+.links .a{
+  padding-left: 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: 0.3s;
+  color: rgb(29, 29, 29);
+  font-family: 'Signika', sans-serif;
+}
+.links .a:hover{
+  font-size: 1.3em;
+  color: white;
+}
+.links .login:hover{
+  color: white;
+  padding: 3.5px 5.5px 4px 5.5px;
+}
+.carrito:hover{
+  transform: scale(1.1);
+}
+
+.login{
+  margin-left: 90px;
+  background-color: rgb(17, 17, 17);
+  padding: 0.313em 0.438em 0.344em 0.448em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: rgb(204, 204, 204);
+  transition: 0.3s;
+  font-family: 'Signika', sans-serif;
+}
+.carrito{
+  cursor: pointer;
+  transition: 0.3s;
+  color: rgb(29, 29, 29);
+  font-family: 'Signika', sans-serif;
+  position: absolute;
+  right: 10%;
+}

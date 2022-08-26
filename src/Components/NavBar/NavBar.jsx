@@ -1,6 +1,8 @@
+import './style.css'
+import LogoCarrito from '../CartWidget/CartWidget'
 const NavBar = () =>{
-    return(
-        <header className='header'>
+  return(
+    <header className='header'>
         <div className='div-marca'>
           <h1>logo</h1>
         </div>
@@ -8,6 +10,7 @@ const NavBar = () =>{
           <a className="a" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>Carrito</a>
           <a className="a" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>Carrito</a>
           <a className="login" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>login</a>
+          <a className="carrito"><LogoCarrito /></a>
         </div>
       </header>
     )
