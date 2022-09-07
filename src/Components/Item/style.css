@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+section{
+width: 25%;
+margin: 0 auto;
+background-color: wheat;
+}
+section img{
+    width: 95%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    
+}
+.div{
+    position: relative;
+    bottom: 20px;
+}
+p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.marca{
+    font-size: 21px;
+
+}
+

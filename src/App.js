@@ -1,19 +1,27 @@
-// import logo from './logo.svg';
+
 import './App.css';
-import Boton from './Components/ItemListContainer/ItemCount';
+import Boton from './Components/boton/ItemCount';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import NavBar from './Components/NavBar/NavBar';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 
 function App() {
   const [stock, setstock] = useState(8)
-  
+
   return (
+
+    
+
     <div>
       <NavBar/>
-      <ItemListContainer greeting='Este es el main'/>
+
+        <ItemListContainer/>
+
       <Boton stock={stock}/>
+
+
+
     </div>
    
     // <div className="App">
