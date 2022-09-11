@@ -1,9 +1,8 @@
 
 .main{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-margin: 10%;
-gap: 10px;
-    
+    width: 80%;
+    margin: 200px auto;
+    gap: 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }

@@ -1,21 +1,29 @@
-import React, {useState} from 'react'
-import './botn.css'
+import React, {useState, useEffect} from 'react'
+import './style.css'
 import sumar from './img/add.png'
 import restar from './img/delete.png'
 
-const Boton = ({ stock }) => {
+const ItemCount = ({ stock }) => {
     const [Contador, setContador] = useState(0)
+
+    useEffect(() => {
+      
+    }, [])
+    
 
     const btnResta = () =>{
         if (Contador > 0) {    
             setContador(Contador - 1)
         }
     }
-   
+
     const btnSuma = () =>{
         if (Contador < stock) { 
             setContador(Contador + 1)
         }
+    }
+    const onAdd = ()=>{
+        console.log( `${Contador} producto añadido`);
     }
   return (
     <div className='div-padre'>
@@ -27,8 +35,11 @@ const Boton = ({ stock }) => {
             <p>{Contador}</p>
             <img onClick={btnResta} src={restar} alt="" />
         </div>
+        <div>
+            <button onClick={onAdd} className='comprar'>Agregar al carrito</button>
+        </div>
     </div>
   )
 }
 
-export default Boton
+export default ItemCount

@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 section{
-width: 25%;
+width: 100%;
 margin: 0 auto;
 background-color: wheat;
+text-decoration: none;
 }
 section img{
     width: 95%;
@@ -23,6 +24,6 @@ p{
 }
 .marca{
     font-size: 21px;
-
+    text-decoration: none;
 }
 

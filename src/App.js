@@ -1,9 +1,12 @@
 
 import './App.css';
-import Boton from './Components/boton/ItemCount';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemCount from './Components/ItemCount/ItemCount';
+import ItemListContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemListContainer';
 import NavBar from './Components/NavBar/NavBar';
 import {useState, useEffect} from 'react'
+// import { BrowserRouter, Routes, Route} from react-router-dom
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemDetailContainer';
 
 
 function App() {
@@ -14,11 +17,15 @@ function App() {
     
 
     <div>
-      <NavBar/>
+      <BrowserRouter>
+        <NavBar/>
+          <Routes>
+            <Route path='/' element={<ItemListContainer/>}></Route>
+            <Route path='/detail/:id' element={<ItemDetailContainer/>}></Route>
+          </Routes>
+      </BrowserRouter>
 
-        <ItemListContainer/>
-
-      <Boton stock={stock}/>
+      <ItemCount stock={stock} inicial={1}/>
 
 
 

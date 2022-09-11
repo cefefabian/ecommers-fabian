@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
 
 
-
 .header{
   height: 100px;
   width: 100%;
@@ -13,8 +12,13 @@
 .div-marca{
   padding-left: 10%;
 }
-.div-marca h1{
-  height: 50px;
+.div-marca{
+  height: 100%;
+}
+.marca{
+  text-decoration: none;
+  font-size: 2em;
+  color: rgb(29, 29, 29);
 }
 .links{
   padding-right: 23%;
@@ -24,7 +28,7 @@
   text-decoration: none;
   font-size: 1.2em;
   transition: 0.3s;
-  color: rgb(29, 29, 29);
+  
   font-family: 'Signika', sans-serif;
 }
 .links .a:hover{
@@ -38,7 +42,12 @@
 .carrito:hover{
   transform: scale(1.1);
 }
-
+.activo{
+  color: rgb(82, 82, 82);
+}
+.inactivo{
+  color: rgb(29, 29, 29);
+}
 .login{
   margin-left: 90px;
   background-color: rgb(17, 17, 17);

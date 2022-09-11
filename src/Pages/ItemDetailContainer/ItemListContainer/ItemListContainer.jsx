@@ -1,7 +1,8 @@
 
 import getfech from "./Productos";
-import List from "../ItemList/ItemList";
+import List from "../../../Components/ItemList/ItemList";
 import { useState,useEffect  } from "react";
+
 
 
 
@@ -9,6 +10,8 @@ const ItemListContainer = () => {
 
 
   const[productos, setproductos] = useState([])
+  const [cargando, setcargando] = useState(true)
+
 
   useEffect(() => {
     getProduct
@@ -19,13 +22,16 @@ const ItemListContainer = () => {
   const getProduct = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(getfech)
+        setcargando(false)
       }, 2000);
     })
 
 
   return (
     <>
+      {cargando && <h2>cargando...</h2>}
       <List lista = {productos}/>
+
     </>
   )
 }
