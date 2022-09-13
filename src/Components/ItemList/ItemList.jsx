@@ -3,15 +3,15 @@ import React from 'react'
 import Item from '../Item/Item';
 import './style.css'
 import {Link} from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount';
+import Prueba from '../Prueba';
 
 const List = ({lista}) => {
   return (
       <div className='main'>
     {
-        lista.map((Product)=>(
-          <Link key={Product.id}
-          to={`/detail/${Product.id}`}
+      lista.map((Product)=>(
+        <Link key={Product.id}
+        to={`/detail/${Product.id}`}
           style={{textDecoration: 'none'}}>
             <Item 
             marca={Product.marca} 
@@ -19,10 +19,10 @@ const List = ({lista}) => {
             imagen={Product.imagen}
             />
             </Link>
-            
             ))
-
-      }  
+            
+          }  
+          
     </div>
   )
 }

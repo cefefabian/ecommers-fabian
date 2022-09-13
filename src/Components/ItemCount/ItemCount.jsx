@@ -4,7 +4,7 @@ import sumar from './img/add.png'
 import restar from './img/delete.png'
 
 const ItemCount = ({ stock }) => {
-    const [Contador, setContador] = useState(0)
+    const [Contador, setContador] = useState(1)
 
     useEffect(() => {
       

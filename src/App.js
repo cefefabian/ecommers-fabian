@@ -10,7 +10,7 @@ import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/I
 
 
 function App() {
-  const [stock, setstock] = useState(8)
+
 
   return (
 
@@ -24,11 +24,6 @@ function App() {
             <Route path='/detail/:id' element={<ItemDetailContainer/>}></Route>
           </Routes>
       </BrowserRouter>
-
-      <ItemCount stock={stock} inicial={1}/>
-
-
-
     </div>
    
     // <div className="App">

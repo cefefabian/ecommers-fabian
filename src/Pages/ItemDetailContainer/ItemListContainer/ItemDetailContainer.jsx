@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemListDetail from '../../../Components/ItemList/ItemListDetail'
+import ItemDetail from '../../../Components/Item/ItemDetail'
 import {useParams} from 'react-router-dom'
 import getfech from './Productos'
 import { useState, useEffect } from 'react'
@@ -13,28 +13,36 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     console.log(id);
 
-    const [detail, setdetail] = useState([])
-    const [cargando, setcargando] = useState(true)
+    const [detail, setdetail] = useState({})
+    const [cargando, setCargando] = useState(true)
 
 
     useEffect(() => {
-        getProduct
-        .then((resp)=> setdetail(resp))
-    }, [])
-    
-    
-    const getProduct = new Promise((resolve, reject) => {
+      const getProduct = new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve(getfech.filter(producto => producto.id === id))
-          console.log(getProduct);
-          setcargando(false)
+          resolve(getfech.find((producto) => producto.id === id));
+          setCargando(false);
         }, 2000);
-      })
-      console.log(getProduct);
+      });
+  
+  
+      getProduct
+        .then((resp) => setdetail(resp))
+        .finally(() => {
+          setCargando(false);
+        })
+    }, [id])
+
   return (
     <div>
-      {cargando && <h2>Cargando...</h2>}
-        <ItemListDetail detalles={detail}/>
+      {cargando ? <h2>Cargando...</h2> :
+            <ItemDetail
+            imagen={detail.imagen}
+            resolucion={detail.resolucion}
+            tamaño={detail.tamaño}
+            smart={detail.smart}
+          />
+      }
     </div>
   )
 }
