@@ -3,16 +3,12 @@ import './style.css'
 import sumar from './img/add.png'
 import restar from './img/delete.png'
 
-const ItemCount = ({ stock }) => {
-    const [Contador, setContador] = useState(1)
+const ItemCount = ({ stock, Contador, setContador}) => {
 
-    useEffect(() => {
-      
-    }, [])
     
 
     const btnResta = () =>{
-        if (Contador > 0) {    
+        if (Contador > 1) {    
             setContador(Contador - 1)
         }
     }
@@ -26,7 +22,7 @@ const ItemCount = ({ stock }) => {
         console.log( `${Contador} producto añadido`);
     }
   return (
-    <div className='div-padre'>
+    <div className='div-boton'>
         <div className='stock-disponible'>
            <h3>Stock disponible {stock}</h3> 
         </div>

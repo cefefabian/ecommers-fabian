@@ -3,7 +3,6 @@ import React from 'react'
 import Item from '../Item/Item';
 import './style.css'
 import {Link} from 'react-router-dom'
-import Prueba from '../Prueba';
 
 const List = ({lista}) => {
   return (
