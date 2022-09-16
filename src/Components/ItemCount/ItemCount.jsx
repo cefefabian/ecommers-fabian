@@ -3,7 +3,7 @@ import './style.css'
 import sumar from './img/add.png'
 import restar from './img/delete.png'
 
-const ItemCount = ({ stock, Contador, setContador}) => {
+const ItemCount = ({ stock, onAdd , Contador, setContador}) => {
 
     
 
@@ -18,9 +18,11 @@ const ItemCount = ({ stock, Contador, setContador}) => {
             setContador(Contador + 1)
         }
     }
-    const onAdd = ()=>{
-        console.log( `${Contador} producto añadido`);
-    }
+    const agregarAlCarrito= () => {
+        if (Contador > 0 && Contador <= stock) {
+          onAdd(Contador);
+        }
+      }
   return (
     <div className='div-boton'>
         <div className='stock-disponible'>
@@ -32,7 +34,7 @@ const ItemCount = ({ stock, Contador, setContador}) => {
             <img onClick={btnResta} src={restar} alt="" />
         </div>
         <div>
-            <button onClick={onAdd} className='comprar'>Agregar al carrito</button>
+            <button onClick={agregarAlCarrito} className='comprar'>Agregar al carrito</button>
         </div>
     </div>
   )

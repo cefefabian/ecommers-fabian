@@ -8,9 +8,10 @@ const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
   const [stock, setstock] = useState(8)
   const [Contador, setContador] = useState(1)
 
-  const carrito = () =>{
-    console.log('ca');
+  const onAdd= (cantidad) => {
+    console.log(`Agregaste ${cantidad} productos al carrito`);
   }
+
   return (
     <div className='div-padre'>
       <div className='detalles'>
@@ -21,9 +22,13 @@ const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
           <p className='smart'>{smart}</p>
         </div>
         <div className='compras'>
-          <ItemCount stock={stock} Contador={Contador} setContador={setContador}/>
+          <ItemCount 
+          stock={stock} 
+          Contador={Contador} 
+          setContador={setContador}
+          onAdd={onAdd}/>
           <div className='finalizar-compra-div'>
-          <Link to={'/car'} onClick={carrito} className='finalizar-compra'>
+          <Link to={'/car'} className='finalizar-compra'>
            Finalizar Comprar
           </Link>
 

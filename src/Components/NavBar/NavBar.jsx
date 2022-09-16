@@ -1,6 +1,6 @@
 import './style.css'
 import LogoCarrito from '../CartWidget/CartWidget'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 const NavBar = () =>{
   return(
     <header className='header'>
@@ -10,24 +10,19 @@ const NavBar = () =>{
           </NavLink>
         </div>
         <div className='links'>
-          <NavLink to={'/info'}
+          <NavLink to={'/marca/sansung'}
           className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
-            Info
+            sansung
           </NavLink>
-          <NavLink to={'/contacto'}
+          <NavLink to={'/marca/sony'}
           className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
-            Contacto
+            sony
           </NavLink>
           <NavLink to={'/login'} className= 'login'>
             Login
           </NavLink>
           <NavLink to={'/carrito'} className='cariito'>
-            
           </NavLink>
-          {/* <a className="a" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>Info</a>
-          <a className="a" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>Contacto</a>
-          <a className="login" href='https://plataforma.coderhouse.com/cursos/34745/reactjs'>login</a>
-          <a className="carrito"><LogoCarrito /></a> */}
         </div>
       </header>
     )

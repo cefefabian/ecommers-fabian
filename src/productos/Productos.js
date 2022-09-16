@@ -1,16 +1,16 @@
 
-const getfech = [
+export default [
     {   id:'1',
     imagen:'https://images.samsung.com/is/image/samsung/latin-uhd-tu8000-un55tu8000pxpa-frontblack-229165828?$650_519_PNG$',
-    marca:'sansung',
+    marca:'sony',
     precio:'70000',
         tamaño:'50 pulgadas',
         resolucion:'full hd',
         smart:'SmartTv'
 },
-    {   id:'2',
+    {   id:'2', 
     imagen:'https://images.samsung.com/is/image/samsung/latin-uhd-tu8000-un55tu8000pxpa-frontblack-229165828?$650_519_PNG$',
-    marca:'sansung',
+    marca:'sony',
     precio:'70000',
         tamaño:'50 pulgadas',
         resolucion:'full hd',
@@ -25,6 +25,7 @@ const getfech = [
         smart:'SmartTv'
 },
     {    id:'4',
+    
     imagen:'https://images.samsung.com/is/image/samsung/latin-uhd-tu8000-un55tu8000pxpa-frontblack-229165828?$650_519_PNG$',
     marca:'sansung',
     precio:'70000',
@@ -34,7 +35,7 @@ const getfech = [
 },
     {    id:'5',
     imagen:'https://images.samsung.com/is/image/samsung/latin-uhd-tu8000-un55tu8000pxpa-frontblack-229165828?$650_519_PNG$',
-    marca:'sansung',
+    marca:'sony',
     precio:'70000',
         tamaño:'50 pulgadas',
         resolucion:'full hd',
@@ -75,5 +76,3 @@ const getfech = [
   
 ]
 
-
-export default getfech 

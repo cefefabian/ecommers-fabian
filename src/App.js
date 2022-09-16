@@ -4,9 +4,9 @@ import ItemCount from './Components/ItemCount/ItemCount';
 import ItemListContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemListContainer';
 import NavBar from './Components/NavBar/NavBar';
 import {useState, useEffect} from 'react'
-// import { BrowserRouter, Routes, Route} from react-router-dom
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemDetailContainer';
+// import {CartContext} from './src/Context/cartContext'
 
 
 function App() {
@@ -17,13 +17,16 @@ function App() {
     
 
     <div>
+      {/* <CartContext.Provider value={[]}> */}
       <BrowserRouter>
         <NavBar/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>}></Route>
+            <Route path="/marca/:marcaId" element={<ItemListContainer />} />
             <Route path='/detail/:id' element={<ItemDetailContainer/>}></Route>
           </Routes>
       </BrowserRouter>
+      {/* <CartContext.Provider/> */}
     </div>
    
     // <div className="App">

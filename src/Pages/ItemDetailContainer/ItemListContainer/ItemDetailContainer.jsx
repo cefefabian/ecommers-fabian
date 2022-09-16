@@ -1,11 +1,8 @@
 import React from 'react'
 import ItemDetail from '../../../Components/Item/ItemDetail'
 import {useParams} from 'react-router-dom'
-import getfech from './Productos'
+import { getProductById } from '../../../productos/product.servise'
 import { useState, useEffect } from 'react'
-
-
-
 
 
 const ItemDetailContainer = () => {
@@ -18,19 +15,12 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-      const getProduct = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(getfech.find((producto) => producto.id === id));
-          setCargando(false);
-        }, 2000);
-      });
-  
-  
-      getProduct
-        .then((resp) => setdetail(resp))
-        .finally(() => {
-          setCargando(false);
-        })
+          getProductById(id)
+          .then((resp) => setdetail(resp))
+          .finally(() => {
+            setCargando(false);
+          })
+    
     }, [id])
 
   return (
