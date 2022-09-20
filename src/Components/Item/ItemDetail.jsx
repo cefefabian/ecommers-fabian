@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom'
 import './styleDetail.css'
 
 const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
+  const [hidden, setHidden] = useState(false)
   const [stock, setstock] = useState(8)
   const [Contador, setContador] = useState(1)
 
   const onAdd= (cantidad) => {
     console.log(`Agregaste ${cantidad} productos al carrito`);
+    setHidden(true)
   }
 
   return (
@@ -22,21 +24,25 @@ const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
           <p className='smart'>{smart}</p>
         </div>
         <div className='compras'>
-          <ItemCount 
-          stock={stock} 
-          Contador={Contador} 
-          setContador={setContador}
-          onAdd={onAdd}/>
-          <div className='finalizar-compra-div'>
-          <Link to={'/car'} className='finalizar-compra'>
-           Finalizar Comprar
-          </Link>
-
+          
+          {
+            hidden ? (
+            <div className='finalizar-compra-div'>
+              <Link to={'/car'} className='finalizar-compra'>
+               Finalizar Comprar
+              </Link>
           </div>
+            ):(
+              <ItemCount 
+              stock={stock} 
+              Contador={Contador} 
+              setContador={setContador}
+              onAdd={onAdd}/>
+            )
+          }
+
         </div>
       </div>
-
-
     </div>
   )
 }

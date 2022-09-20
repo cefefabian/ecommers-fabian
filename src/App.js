@@ -6,19 +6,15 @@ import NavBar from './Components/NavBar/NavBar';
 import {useState, useEffect} from 'react'
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemDetailContainer';
-// import {CartContext} from './src/Context/cartContext'
+import CartProvider from './Context/CartProvider';
 
 
 function App() {
 
 
   return (
-
-    
-
-    <div>
-      {/* <CartContext.Provider value={[]}> */}
-      <BrowserRouter>
+  <CartProvider>
+    <BrowserRouter>
         <NavBar/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>}></Route>
@@ -26,8 +22,8 @@ function App() {
             <Route path='/detail/:id' element={<ItemDetailContainer/>}></Route>
           </Routes>
       </BrowserRouter>
-      {/* <CartContext.Provider/> */}
-    </div>
+    </CartProvider>
+
    
     // <div className="App">
     //   <header className="App-header">

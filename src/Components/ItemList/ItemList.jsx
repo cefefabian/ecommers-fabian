@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 const List = ({lista}) => {
   return (
-      <div className='main'>
+  <div className='main'>
     {
       lista.map((Product)=>(
         <Link key={Product.id}
@@ -22,7 +22,7 @@ const List = ({lista}) => {
             
           }  
           
-    </div>
+  </div>
   )
 }
 
