@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import './style.css'
 import sumar from './img/add.png'
 import restar from './img/delete.png'
+import ItemDetailContainer from '../../Pages/ItemDetailContainer/ItemListContainer/ItemDetailContainer'
+
 
 const ItemCount = ({ stock, onAdd , Contador, setContador}) => {
 
@@ -20,7 +22,7 @@ const ItemCount = ({ stock, onAdd , Contador, setContador}) => {
     }
     const agregarAlCarrito= () => {
         if (Contador > 0 && Contador <= stock) {
-          onAdd(Contador);
+          onAdd();
         }
       }
   return (

@@ -27,10 +27,12 @@ const ItemDetailContainer = () => {
     <div>
       {cargando ? <h2>Cargando...</h2> :
             <ItemDetail
+            marca={detail.marca}
             imagen={detail.imagen}
             resolucion={detail.resolucion}
             tamaño={detail.tamaño}
             smart={detail.smart}
+            id={detail.id}
           />
       }
     </div>

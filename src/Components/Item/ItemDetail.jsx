@@ -2,16 +2,22 @@ import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 import './styleDetail.css'
+import { CartContext } from '../../Context/cartContext'
 
-const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
+
+  const ItemDetail = ({tamaño, resolucion, smart, imagen, marca,id}) => {
   const [hidden, setHidden] = useState(false)
   const [stock, setstock] = useState(8)
   const [Contador, setContador] = useState(1)
 
-  const onAdd= (cantidad) => {
-    console.log(`Agregaste ${cantidad} productos al carrito`);
+  const { addToCart } = useContext(CartContext)
+
+  const onAdd = () => {
+    console.log(`Agregaste ${Contador} productos al carrito`);
     setHidden(true)
+    addToCart(id,resolucion,smart,marca,tamaño,Contador)
   }
 
   return (
@@ -31,6 +37,7 @@ const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
               <Link to={'/car'} className='finalizar-compra'>
                Finalizar Comprar
               </Link>
+              
           </div>
             ):(
               <ItemCount 
@@ -40,7 +47,7 @@ const ItemDetail = ({tamaño, resolucion, smart, imagen, marca}) => {
               onAdd={onAdd}/>
             )
           }
-
+          
         </div>
       </div>
     </div>
