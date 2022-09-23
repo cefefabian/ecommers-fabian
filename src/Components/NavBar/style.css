@@ -39,9 +39,6 @@
   color: white;
   padding: 3.5px 5.5px 4px 5.5px;
 }
-.carrito:hover{
-  transform: scale(1.1);
-}
 .activo{
   color: rgb(82, 82, 82);
 }

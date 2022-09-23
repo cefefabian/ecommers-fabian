@@ -33,6 +33,7 @@ const ItemDetailContainer = () => {
             tamaño={detail.tamaño}
             smart={detail.smart}
             id={detail.id}
+            precio={detail.precio}
           />
       }
     </div>

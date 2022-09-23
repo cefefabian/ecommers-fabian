@@ -21,7 +21,8 @@ const NavBar = () =>{
           <NavLink to={'/login'} className= 'login'>
             Login
           </NavLink>
-          <NavLink to={'/carrito'} className='cariito'>
+          <NavLink to={'/cart'}>
+            <LogoCarrito/>
           </NavLink>
         </div>
       </header>

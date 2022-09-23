@@ -7,6 +7,7 @@ import {useState, useEffect} from 'react'
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/ItemDetailContainer';
 import CartProvider from './Context/CartProvider';
+import Cart from './Components/Cart/Cart';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<ItemListContainer/>}></Route>
             <Route path="/marca/:marcaId" element={<ItemListContainer />} />
             <Route path='/detail/:id' element={<ItemDetailContainer/>}></Route>
+            <Route path='/cart' element={<Cart />}></Route>
           </Routes>
       </BrowserRouter>
     </CartProvider>

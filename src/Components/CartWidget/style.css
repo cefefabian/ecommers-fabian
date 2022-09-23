@@ -1,0 +1,13 @@
+.cart{
+    width: 27px;
+    position: absolute;
+    right: 10%;
+    top: 6%;
+}
+
+.cart-length{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+}

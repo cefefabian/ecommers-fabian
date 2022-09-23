@@ -9,7 +9,7 @@ export function getAllProducts(marcaId) {
         } else {
           resolve(Productos);
         }
-    }, 2000);
+    }, 0);
     });
 }
 
@@ -17,6 +17,6 @@ export function getProductById(id) {
   return new Promise((resolve) => {
     setTimeout(() => {      
         resolve(Productos.find((x) => x.id === id));
-    }, 2000);
+    }, 0);
   });
 }

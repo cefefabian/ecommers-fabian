@@ -29,14 +29,35 @@
 }
 .finalizar-compra-div{
     text-align: center;
-    margin-top: 30px;
-    
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
 }
 .finalizar-compra{
     text-decoration: none;
-    background-color: white;
-    color: black;
-    border-radius: 3px;
+    background-color: rgb(53, 53, 53);
+    color: wheat;
+    border-radius: 5px;
     border: solid 1px black;
-    padding: 5px;
+    padding: 5px 7px;
+    transition: 0.3s ease-in;
+}
+.finalizar-compra:hover{
+    border: solid 4px black;
+    padding: 2px 4px;
+}
+.seguir-comprando a:hover{
+    border: solid 4px black;
+    padding: 2px 4px;
+}
+.seguir-comprando a{
+    text-decoration: none;
+    background-color: rgb(53, 53, 53);
+    color: wheat;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 5px 7px;
+    transition: 0.3s ease-in;
 }

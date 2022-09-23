@@ -1,21 +1,20 @@
-import React, { children } from 'react'
+import { children } from 'react'
 import { useState } from 'react'
-import { CartContext } from './cartContext'
+import { CartContext } from './CartContext'
 
 
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
-    const addToCart = (id,resolucion,smart,marca,tamaño,quantity) =>{
+    const addToCart = (id,imagen,resolucion,precio,smart,marca,tamaño,quantity) =>{
        if(isInCart(id)){
         alert('ya agregaste este producto al carrito')
        }else{
-         setCart([...cart, {id,resolucion,smart,marca,tamaño,quantity}],)
+         setCart([...cart, {id,imagen,resolucion,precio,smart,marca,tamaño,quantity}],)
        }
       };
       
-      console.log(cart);
     const isInCart = (id) =>{
       return cart.some((producto) => producto.id === id)
     };
@@ -24,8 +23,19 @@ const CartProvider = ({children}) => {
       setCart([])
     }
 
+    const eliminarProducto = (productId) =>{
+      let eliminarProductoArray = []
+      cart.forEach((product)=>{
+        if (product.id !== productId) {
+          eliminarProductoArray.push(product)
+          
+        }
+      })
+      setCart(eliminarProductoArray)
+    }
+
   return (
-    <CartContext.Provider value={{cart, addToCart, limpiarCarrito}}>
+    <CartContext.Provider value={{cart, addToCart, limpiarCarrito, eliminarProducto}}>
         {children}
     </CartContext.Provider>
   );
