@@ -8,26 +8,27 @@ import { CartContext } from '../../Context/CartContext'
 import Cart from '../Cart/Cart'
 
 
-  const ItemDetail = ({tamaño, resolucion, precio, smart, imagen, marca,id}) => {
+  const ItemDetail = ({stock, description, precio, imagen, marca, id}) => {
   const [hidden, setHidden] = useState(false)
-  const [stock, setstock] = useState(8)
+  const [stocki, setstock] = useState(stock)
   const [Contador, setContador] = useState(1)
 
   const { addToCart, añadido} = useContext(CartContext)
 
+  console.log(id);
+  
   const onAdd = () => {
     setHidden(true)
-    addToCart(id,imagen,resolucion,precio,smart,marca,tamaño,Contador)
+    addToCart(id,imagen,description,precio,marca,stock,Contador)
   }
-
+  const rutaImg = '../img/'
   return (
     <div className='div-padre'>
       <div className='detalles'>
-        <img className='imagen' src={imagen} alt={marca} />
+        <img className='imagen' src={rutaImg + imagen} alt={marca} />
         <div className='detalles2'>
-          <p className='tamaño'>{tamaño}</p>
-          <p className='resolucion'>{resolucion}</p>
-          <p className='smart'>{smart}</p>
+          <p className='tamaño'>{marca}</p>
+          <p className='resolucion'>{description}</p>
         </div>
         <div className='compras'>
           
@@ -47,7 +48,7 @@ import Cart from '../Cart/Cart'
           </div>
             ):(
               <ItemCount 
-              stock={stock} 
+              stock={stocki} 
               Contador={Contador} 
               setContador={setContador}
               onAdd={onAdd}/>

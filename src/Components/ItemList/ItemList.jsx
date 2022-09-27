@@ -13,9 +13,9 @@ const List = ({lista}) => {
         to={`/detail/${Product.id}`}
           style={{textDecoration: 'none'}}>
             <Item 
-            marca={Product.marca} 
-            precio={Product.precio} 
-            imagen={Product.imagen}
+            marca={Product.title} 
+            precio={Product.price} 
+            imagen={Product.image}
             />
             </Link>
             ))

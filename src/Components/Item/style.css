@@ -6,12 +6,15 @@ width: 100%;
 margin: 0 auto;
 background-color: wheat;
 text-decoration: none;
+/* min-height: 500px; */
 }
 section img{
+    min-height: fit-content;
     width: 95%;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    
+    padding-top: 20px;
+    height: 200px;
 }
 .div{
     position: relative;

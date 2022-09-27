@@ -1,7 +1,10 @@
 import './style.css'
 import LogoCarrito from '../CartWidget/CartWidget'
 import { NavLink } from 'react-router-dom'
+
+
 const NavBar = () =>{
+
   return(
     <header className='header'>
         <div className='div-marca'>
@@ -10,13 +13,17 @@ const NavBar = () =>{
           </NavLink>
         </div>
         <div className='links'>
-          <NavLink to={'/marca/sansung'}
+          <NavLink to={'category/Sansung'}
           className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
-            sansung
+            Sansung
           </NavLink>
-          <NavLink to={'/marca/sony'}
+          <NavLink to={'category/Sony'}
           className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
-            sony
+            Sony
+          </NavLink>
+          <NavLink to={'category/Hitachi'}
+          className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
+            Hitachi
           </NavLink>
           <NavLink to={'/login'} className= 'login'>
             Login

@@ -2,11 +2,12 @@ import React from 'react'
 import './style.css'
 import ItemCount from '../ItemCount/ItemCount'
 
-const Item = ({marca, precio, tamaño, resolucion, smart, imagen}) => {
+const Item = ({marca, precio, tamaño, resolucion, smart, imagen, id}) => {
+  const rutaImg = '../img/'
     return (
         <>
         <section>
-        <img src={imagen} alt={marca}/>
+        <img src={rutaImg + imagen} alt={marca}/>
         <div className='div'>
         <p className='marca'>{marca}</p>
         <p className='precio'>{precio}</p>
