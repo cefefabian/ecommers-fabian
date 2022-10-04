@@ -22,16 +22,7 @@
 .div-carrito-interno img{
     width: 80%;
 }
-.total{
-    width: calc(200% + 5px);
-    padding: 8px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(204, 204, 204);
-    border-radius: 8px;
-    cursor: default;
-}
+
 .div-carrito-interno button{
 cursor: pointer;
 border: gray 1px solid;
@@ -44,7 +35,7 @@ border-radius: 2px;
     width: 70%;
     margin: 0 auto;
 }
-.producto .total{
+.producto .fin{
     width: 100%;
 }
 .no-hay-producto{
@@ -61,4 +52,20 @@ border-radius: 2px;
 }
 .no-hay-producto a{
     cursor: pointer;
+}
+.order{
+    cursor: pointer;
+    border: gray 1px solid;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.fin{
+    width: calc(200% + 5px);
+    padding: 4px 50x;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(204, 204, 204);
+    border-radius: 8px;
+    cursor: default;
 }

@@ -3,30 +3,47 @@ import { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { collection, addDoc, getFirestore } from 'firebase/firestore'
+import moment from 'moment'
 import './style.css'
+import Item from '../Item/Item'
 
 const Cart = () => {
-    const { cart, addToCart, limpiarCarrito, eliminarProducto } = useContext(CartContext)
+    const { cart, addToCart, eliminarProducto } = useContext(CartContext)
     const [totalCarrito, settotalCarrito] = useState()
-    const [clase, setclase] = useState()
-    
-    {
-        useEffect(() => {
-        const totalDelCarrito = Object.values(cart).map((total)=> total.precio * total.contador)
-            let total = 0
-        for (let i = 0; i < totalDelCarrito.length; i++) {
-            total += totalDelCarrito[i]
+    console.log(totalCarrito);
+    // const [first, setfirst] = useState()
+    // {
+    //     useEffect(() => {
+    //         for (let index = 0; index < cart.length; index++) {
+    //             const element = cart[index];
+    //             setfirst(cart.filter((und)=> und != undefined));
+                
+    //         }
+    //     }, [])
+        
+    // }
+
+    console.log(cart);
+
+    const createOrder= (und) =>{
+        const db = getFirestore()
+        const order = {
+            buyer: {
+                email:'tst@test.com',
+                name:'cef',
+                phone:2494261
+            },
+            items: cart,
+            total: cart.reduce((valoranterior, valoractual)=> valoranterior + valoractual.precio * valoractual.contador, 0),
+            date: moment().format(), 
         }
-           settotalCarrito(total)
+        const queryy = collection(db, 'orders');
+        addDoc(queryy, order)
+        .then(({id})=> console.log(id))
+    }
     
-    }, [cart])
-    
-
-}
-
-{
-}
-
+   
     const rutaImg = '../img/'
   return (
     <div className={(cart.length == 1) ? 'producto carrito' : 'carrito'}>
@@ -39,16 +56,18 @@ const Cart = () => {
                     <img src={rutaImg + producto.imagen} alt={producto.marca} />
                     <h2>Cantidad: {producto.contador}</h2>
                     <h2>marca: {producto.marca}</h2>
-                    <h2>precio por unidad: {producto.precio}</h2>
+                    <h2>precio por unidad: {producto.precio}$</h2>
                     <button className='eliminar-producto' onClick={()=>eliminarProducto(producto.id)}>Eliminar producto del carrito</button>
                     </div>
                 </div>
                 
             ))
         }
+
            {
-            cart.length !== 0 && (<div>
-                <h2  className='total'>precio total: {totalCarrito}</h2>
+            cart.length !== 0 && (<div className='fin'>
+                <h2  className='total'>precio total: {cart.reduce((valoranterior, valoractual)=> valoranterior + valoractual.precio * valoractual.contador, 0)}$</h2>
+                <button className='order' onClick={createOrder}>order</button>
             </div>)
             }
     </div>

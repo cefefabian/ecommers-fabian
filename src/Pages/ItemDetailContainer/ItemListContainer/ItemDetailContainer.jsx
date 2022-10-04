@@ -1,7 +1,6 @@
 import React from 'react'
 import ItemDetail from '../../../Components/Item/ItemDetail'
 import {useParams} from 'react-router-dom'
-import { getProductById } from '../../../productos/product.servise'
 import { useState, useEffect } from 'react'
 import { getFirestore, doc, getDoc } from 'firebase/firestore'
 
@@ -36,7 +35,7 @@ const ItemDetailContainer = () => {
             imagen={detail.image}
             description={detail.description}
             stock={detail.stock}
-            // smart={detail.smart}
+            category={detail.category}
             id={detail.id}
             precio={detail.price}
           />

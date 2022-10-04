@@ -8,7 +8,7 @@ import { CartContext } from '../../Context/CartContext'
 import Cart from '../Cart/Cart'
 
 
-  const ItemDetail = ({stock, description, precio, imagen, marca, id}) => {
+  const ItemDetail = ({stock, description, precio, imagen, marca, id, category}) => {
   const [hidden, setHidden] = useState(false)
   const [stocki, setstock] = useState(stock)
   const [Contador, setContador] = useState(1)
@@ -19,7 +19,7 @@ import Cart from '../Cart/Cart'
   
   const onAdd = () => {
     setHidden(true)
-    addToCart(id,imagen,description,precio,marca,stock,Contador)
+    addToCart(id,imagen,description,precio,marca,stock,Contador,category)
   }
   const rutaImg = '../img/'
   return (

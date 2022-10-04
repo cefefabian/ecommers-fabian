@@ -13,7 +13,7 @@ const CartProvider = ({children}) => {
        if(isInCart(id)){
         alert('ya agregaste este producto al carrito')
        }else{
-         setCart([...cart, {id,imagen,description,precio,marca,stock,contador,category}],)
+         setCart([...cart, {id,imagen,description,precio,marca,stock,contador,category}])
        }
       };
       
@@ -26,18 +26,10 @@ const CartProvider = ({children}) => {
     }
 
     const eliminarProducto = (productId) =>{
-      let eliminarProductoArray = []
-      cart.forEach((product)=>{
-        if (product.id !== productId) {
-          eliminarProductoArray.push(product)
-          
-        }
-      })
-      setCart(eliminarProductoArray)
+      setCart(cart.filter((Item)=> Item.id !== productId))
     }
-
   return (
-    <CartContext.Provider value={{cart, addToCart, limpiarCarrito, eliminarProducto}}>
+    <CartContext.Provider value={{cart,setCart, addToCart, limpiarCarrito, eliminarProducto}}>
         {children}
     </CartContext.Provider>
   );

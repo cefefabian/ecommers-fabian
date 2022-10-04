@@ -9,7 +9,7 @@ const NavBar = () =>{
     <header className='header'>
         <div className='div-marca'>
           <NavLink to={'/'} style={{textDecoration: 'none'}}>
-           <h1 className='marca'>logo</h1>
+           <h1 className='logo'>logo</h1>
           </NavLink>
         </div>
         <div className='links'>
@@ -24,9 +24,6 @@ const NavBar = () =>{
           <NavLink to={'category/Hitachi'}
           className={({ isActive })=>(isActive ? "activo a": "inactivo a")}>
             Hitachi
-          </NavLink>
-          <NavLink to={'/login'} className= 'login'>
-            Login
           </NavLink>
           <NavLink to={'/cart'}>
             <LogoCarrito/>

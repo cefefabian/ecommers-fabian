@@ -15,7 +15,7 @@
 .div-marca{
   height: 100%;
 }
-.marca{
+.logo{
   text-decoration: none;
   font-size: 2em;
   color: rgb(29, 29, 29);
@@ -45,8 +45,9 @@
 .inactivo{
   color: rgb(29, 29, 29);
 }
-.login{
-  margin-left: 90px;
+.marca{
+  width: 90%;
+  margin:40px auto;
   background-color: rgb(17, 17, 17);
   padding: 0.313em 0.438em 0.344em 0.448em;
   border-radius: 5px;
@@ -55,6 +56,11 @@
   color: rgb(204, 204, 204);
   transition: 0.3s;
   font-family: 'Signika', sans-serif;
+}
+.marca:hover{
+  color: white;
+  padding: 3.5px 5.5px 4px 5.5px;
+  margin-bottom: 45.8px;
 }
 .carrito{
   cursor: pointer;
