@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import ItemCount from '../ItemCount/ItemCount'
+
 
 const Item = ({marca, precio, tamaño, resolucion, smart, imagen, id}) => {
   const rutaImg = '../img/'

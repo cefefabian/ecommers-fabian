@@ -5,9 +5,7 @@ import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 
 const ItemListContainer = () => {
-  
-  const[productos, setproductos] = useState([])
-  console.log(productos);
+  const[productos, setProductos] = useState([])
   const [cargando, setCargando] = useState(true)
   const {categoryName} = useParams()
 
@@ -22,7 +20,7 @@ const ItemListContainer = () => {
       const data = resp.docs.map((product) =>{
         return {id: product.id, ...product.data()}
       })
-      setproductos(data)
+      setProductos(data)
       setCargando(false)
       console.log(data);
     })
@@ -34,10 +32,8 @@ const ItemListContainer = () => {
   }, [categoryName])
 
 
-
   return (
     <div>
-    
       {
       cargando ? <h2>cargando...</h2> :
         <List lista = {productos}/>

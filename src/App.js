@@ -9,7 +9,6 @@ import ItemDetailContainer from './Pages/ItemDetailContainer/ItemListContainer/I
 import CartProvider from './Context/CartProvider';
 import Cart from './Components/Cart/Cart';
 
-
 function App() {
 
 

@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     console.log(id);
 
-    const [detail, setdetail] = useState([])
+    const [detail, setDetail] = useState([])
     const [cargando, setCargando] = useState(true)
     console.log(detail);
     const db = getFirestore()
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
           const queryDoc = doc(db, 'productos', id)
           getDoc(queryDoc)
           .then((res) => {
-            setdetail( {id: res.id, ...res.data()} )
+            setDetail( {id: res.id, ...res.data()} )
             setCargando(false)
           })
           

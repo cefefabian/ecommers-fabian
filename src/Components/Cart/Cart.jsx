@@ -9,22 +9,8 @@ import './style.css'
 import Item from '../Item/Item'
 
 const Cart = () => {
-    const { cart, addToCart, eliminarProducto } = useContext(CartContext)
-    const [totalCarrito, settotalCarrito] = useState()
-    console.log(totalCarrito);
-    // const [first, setfirst] = useState()
-    // {
-    //     useEffect(() => {
-    //         for (let index = 0; index < cart.length; index++) {
-    //             const element = cart[index];
-    //             setfirst(cart.filter((und)=> und != undefined));
-                
-    //         }
-    //     }, [])
-        
-    // }
+    const { cart, eliminarProducto } = useContext(CartContext)
 
-    console.log(cart);
 
     const createOrder= (und) =>{
         const db = getFirestore()

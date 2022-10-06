@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import './styleDetail.css'
 import { CartContext } from '../../Context/CartContext'
-import Cart from '../Cart/Cart'
-
 
   const ItemDetail = ({stock, description, precio, imagen, marca, id, category}) => {
   const [hidden, setHidden] = useState(false)
   const [stocki, setstock] = useState(stock)
   const [Contador, setContador] = useState(1)
 
-  const { addToCart, añadido} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
   console.log(id);
   

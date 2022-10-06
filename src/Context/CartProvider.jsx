@@ -7,8 +7,6 @@ import { CartContext } from './CartContext'
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
-    console.log(cart);
-
     const addToCart = (id,imagen,description,precio,marca,stock,contador,category) =>{
        if(isInCart(id)){
         alert('ya agregaste este producto al carrito')

@@ -5,6 +5,7 @@ import './style.css'
 import {Link} from 'react-router-dom'
 
 const List = ({lista}) => {
+
   return (
   <div className='main'>
     {
@@ -18,8 +19,7 @@ const List = ({lista}) => {
             imagen={Product.image}
             />
             </Link>
-            ))
-            
+            ))           
           }  
           
   </div>

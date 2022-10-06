@@ -7,7 +7,7 @@ import './style.css'
 
 const LogoCarrito = () => {
   const { cart } = useContext(CartContext)
-  // const cartt = 'cart'
+
   const [claseCarrito, setcaseCarrito] = useState()
   useEffect(() => {
       {if (cart.length > 0) {
