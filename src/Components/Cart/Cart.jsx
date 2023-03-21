@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import moment from 'moment'
 import './style.css'
-import Item from '../Item/Item'
 
 const Cart = () => {
     const { cart, eliminarProducto } = useContext(CartContext)
